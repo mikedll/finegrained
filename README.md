@@ -2,6 +2,10 @@
 Please pay me a fee to use this software. I live in Pasadena, California.
 You can reach me at mrivera@michaelriveraco.com.
 
+# Requirements
+
+Ruby 2 or greater is recommended.
+
 # Development
 
 Some of the specs require a Fine Grained daemon to be running.
@@ -18,3 +22,6 @@ To generate a gemspec:
 
     bundle exec rake gemspec:generate
 
+To develop with Guard watching your specs:
+
+    bundle exec guard
