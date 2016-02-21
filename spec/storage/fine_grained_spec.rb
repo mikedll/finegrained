@@ -4,7 +4,7 @@ require "spec_helper"
 describe FineGrained do
 
   before :each do
-    @db = FineGrainedFile.new(Rails.root.join("tmp/fgtest.db"))
+    @db = FineGrainedFile.new(Spec.root.join("tmp/fgtest.db"))
     @db.hard_clean!
   end
 
@@ -14,7 +14,7 @@ describe FineGrained do
 
   def reload_db
     @db.close
-    @db = FineGrainedFile.new(Rails.root.join("tmp/fgtest.db"))
+    @db = FineGrainedFile.new(Spec.root.join("tmp/fgtest.db"))
   end
 
   context "basics" do
