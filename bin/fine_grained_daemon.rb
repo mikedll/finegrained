@@ -11,16 +11,12 @@ rescue Bundler::GemNotFound => e
   exit!
 end
 
-
 # This bundler group's includes and configuration
 require 'active_support/core_ext'
 SafeYAML::OPTIONS[:default_mode] = :safe
 
-# This bundler group's environment configuration
-ENV['RACK_ENV'] ||= "development"
-
-# Fine Grained environment's app-specific loads
-$LOAD_PATH << Bundler.root
+# Fine Grained loads
+$LOAD_PATH << File.expand_path("../", File.dirname(__FILE__))
 require 'lib/fine_grained'
 require 'lib/fine_grained_client'
 
@@ -31,4 +27,3 @@ EM.run do
   FineGrained.ensure_opened(ARGV.length > 0 ? ARGV[0] : nil)
   EventMachine.start_server("localhost", FineGrained::PORT, FineGrained)
 end
-
