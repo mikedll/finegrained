@@ -14,10 +14,10 @@ require 'active_support/core_ext'
 SafeYAML::OPTIONS[:default_mode] = :safe
 
 $LOAD_PATH << Bundler.root
+
 require 'lib/fine_grained'
 require 'lib/fine_grained_client'
-
-load 'spec/support/help.rb'
+require 'spec/support/help'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -85,4 +85,5 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
 end
