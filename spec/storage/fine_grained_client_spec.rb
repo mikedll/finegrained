@@ -16,7 +16,7 @@ describe FineGrainedClient do
         @fgc.sadd("account:5:requests", "stripe_request")
         @fgc.sadd("account:5:requests", "stripe_request2")
         @fgc.slength("account:5:requests").should == 2
-        @fgc.smember("account:5:requests", "stripe_request").should be_true
+        @fgc.smember("account:5:requests", "stripe_request").should be true
         @fgc.sread("account:5:requests").should =~ ["stripe_request", "stripe_request2"]
         @fgc.srem("account:5:requests", "stripe_request")
         @fgc.srem("account:5:requests", "stripe_request2")
