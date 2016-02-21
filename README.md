@@ -22,3 +22,6 @@ To generate a gemspec:
 
     bundle exec rake gemspec:generate
 
+To develop with Guard watching your specs:
+
+    bundle exec guard
