@@ -1,5 +1,6 @@
 
 require 'socket'
+require 'fine_grained'
 
 class FineGrainedClient
   @@immediate_execution = false
