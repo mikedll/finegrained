@@ -15,6 +15,8 @@ server as needed with `iptables`:
     sudo iptables -A INPUT -p tcp -s localhost --dport 7803 -j ACCEPT
     sudo iptables -A INPUT -p tcp --dport 7083 -j DROP
 
+Persist these with `iptables-save`.
+
 # Development
 
 Some of the specs require a Fine Grained daemon to be running.
